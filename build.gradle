@@ -1,0 +1,27 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.8.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile group: 'com.rometools', name: 'rome', version: '1.9.0'
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.7.2'
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compileOnly("org.projectlombok:lombok:1.16.10")
+}
